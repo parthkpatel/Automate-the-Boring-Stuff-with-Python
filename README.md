@@ -1,0 +1,2 @@
+# Automate the Boring Stuff with Python - Exercises and Projects
+This repository contains my solutions to the exercises and projects assigned in the course [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) by [Al Sweigart](http://alsweigart.com/).
