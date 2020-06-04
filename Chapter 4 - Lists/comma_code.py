@@ -2,18 +2,18 @@
 # with "and" inserted before the last item
 
 
-def list_to_string(inputList):
-    if len(inputList) == 1:
-        return inputList[0]
+def list_to_string(input_list):
+    if len(input_list) == 1:
+        return input_list[0]
 
-    combinedString = ''
-    for i in range(len(inputList)):
-        if i == (len(inputList) - 1) and len(inputList) > 1:
-            combinedString += "and " + str(inputList[i])
+    combined_string = ''
+    for i in range(len(input_list)):
+        if i == (len(input_list) - 1) and len(input_list) > 1:
+            combined_string += "and " + str(input_list[i])
         else:
-            combinedString += str(inputList[i]) + ', '
+            combined_string += str(input_list[i]) + ', '
 
-    return combinedString
+    return combined_string
 
 
 if __name__ == '__main__':

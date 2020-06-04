@@ -11,10 +11,10 @@ if len(sys.argv) < 2:
     print('Usage: py mclip.py [keyphrase] - copy phrase text')
     sys.exit()
 
-keyphrase = sys.argv[1]    # first command line arg is the keyphrase
+key_phrase = sys.argv[1]    # first command line arg is the keyphrase
 
-if keyphrase in TEXT:
-    pyperclip.copy(TEXT[keyphrase])
-    print('Text for ' + keyphrase + ' copied to clipboard.')
+if key_phrase in TEXT:
+    pyperclip.copy(TEXT[key_phrase])
+    print('Text for ' + key_phrase + ' copied to clipboard.')
 else:
-    print('There is no text for ' + keyphrase)
+    print('There is no text for ' + key_phrase)

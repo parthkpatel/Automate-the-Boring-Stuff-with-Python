@@ -3,13 +3,13 @@
 import re
 
 
-def regex_strip(inputString, charactersToRemove):
-    if charactersToRemove == '':
-        stripRegex = re.compile(r'^\s+|\s+$')
+def regex_strip(input_string, characters_to_remove):
+    if characters_to_remove == '':
+        strip_regex = re.compile(r'^\s+|\s+$')
     else:
-        stripRegex = re.compile(r'[' + charactersToRemove + ']')
+        strip_regex = re.compile(r'[' + characters_to_remove + ']')
 
-    return stripRegex.sub('', inputString)
+    return strip_regex.sub('', input_string)
 
 
 if __name__ == '__main__':

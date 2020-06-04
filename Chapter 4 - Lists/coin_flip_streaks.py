@@ -6,21 +6,21 @@ import random
 
 
 def simulate_streak_probability():
-    numberOfStreaks = 0
+    number_of_streaks = 0
     for experimentNumber in range(10000):
         # Code that creates a list of 100 'heads' or 'tails' values.
-        flipResults = ''
-        for flipNumber in range(100):
-            randomNumber = random.randint(0, 1)
-            if randomNumber == 0:
-                flipResults += 'T'
+        flip_results = ''
+        for i in range(100):
+            random_number = random.randint(0, 1)
+            if random_number == 0:
+                flip_results += 'T'
             else:
-                flipResults += 'H'
+                flip_results += 'H'
 
         # Code that checks if there is a streak of 6 heads or tails in a row.
-        if ('TTTTTT' in flipResults) or ('HHHHHH' in flipResults):
-            numberOfStreaks += 1
-    print('Chance of streak: %s%%' % (numberOfStreaks / 100))
+        if ('TTTTTT' in flip_results) or ('HHHHHH' in flip_results):
+            number_of_streaks += 1
+    print('Chance of streak: %s%%' % (number_of_streaks / 100))
 
 
 if __name__ == '__main__':

@@ -1,13 +1,13 @@
 # A simple program that explores The Collatz Sequence
 
 
-def collatz(number):
-    if number % 2 == 0:
-        print(number // 2)
-        return number // 2
-    elif number % 2 == 1:
-        print(number * 3 + 1)
-        return number * 3 + 1
+def collatz(input_number):
+    if input_number % 2 == 0:
+        print(input_number // 2)
+        return input_number // 2
+    elif input_number % 2 == 1:
+        print(input_number * 3 + 1)
+        return input_number * 3 + 1
 
 
 if __name__ == '__main__':

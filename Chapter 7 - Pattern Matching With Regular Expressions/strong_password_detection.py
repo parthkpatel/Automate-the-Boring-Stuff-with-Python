@@ -4,26 +4,26 @@ import re
 
 
 def detect_strong_password(password):
-    passwordLengthRegex = re.compile(r'.{8}')
-    passwordUppercaseRegex = re.compile(r'[A-Z]')
-    passwordLowercaseRegex = re.compile(r'[a-z]')
-    passwordDigitRegex = re.compile(r'\d')
+    password_length_regex = re.compile(r'.{8}')
+    password_uppercase_regex = re.compile(r'[A-Z]')
+    password_lowercase_regex = re.compile(r'[a-z]')
+    password_digit_regex = re.compile(r'\d')
 
-    if passwordLengthRegex.search(password) is None:
+    if password_length_regex.search(password) is None:
         return False
-    elif passwordUppercaseRegex.search(password) is None:
+    elif password_uppercase_regex.search(password) is None:
         return False
-    elif passwordLowercaseRegex.search(password) is None:
+    elif password_lowercase_regex.search(password) is None:
         return False
-    elif passwordDigitRegex.search(password) is None:
+    elif password_digit_regex.search(password) is None:
         return False
     else:
         return True
 
 
 if __name__ == '__main__':
-    inputPassword = input('Please enter your password: ')
-    if detect_strong_password(inputPassword):
+    input_password = input('Please enter your password: ')
+    if detect_strong_password(input_password):
         print('This is a strong password.')
     else:
         print('This is not a strong password.')

@@ -4,29 +4,29 @@ import re
 
 
 def detect_date(text):
-    dateRegex = re.compile(r'''
+    date_regex = re.compile(r'''
     (([0-3])?\d)/           # DD/ check, also allow for D/ for Days 1-9 of a month
     (([0-1])?\d)/           # MM/ check, also allow for M/ for months January - September
     ([1-2]\d\d\d)           # YYYY check, allows years between 1000-2999
     ''', re.VERBOSE)
 
-    mo = dateRegex.search(text)
+    mo = date_regex.search(text)
     groups = mo.groups()
     day = groups[0]
     month = groups[2]
     year = groups[4]
 
-    dayInt = int(day)
-    monthInt = int(month)
-    yearInt = int(year)
+    day_int = int(day)
+    month_int = int(month)
+    year_int = int(year)
 
-    if monthInt in (4, 6, 9, 11) and dayInt > 30:
+    if month_int in (4, 6, 9, 11) and day_int > 30:
         return "Nonexistent Date Provided"
-    elif monthInt == 2:
-        isLeapYear = yearInt % 4 == 0 and (yearInt % 100 != 0 or yearInt % 400 == 0)
-        if (isLeapYear is True and dayInt > 29) or (isLeapYear is False and dayInt > 28):
+    elif month_int == 2:
+        is_leap_year = year_int % 4 == 0 and (year_int % 100 != 0 or year_int % 400 == 0)
+        if (is_leap_year is True and day_int > 29) or (is_leap_year is False and day_int > 28):
             return "Nonexistent Date Provided"
-    elif dayInt > 31:
+    elif day_int > 31:
         return "Nonexistent Date Provided"
 
     return '/'.join([day, month, year])
