@@ -9,7 +9,7 @@ def regex_search():
     while True:
         # prompt = 'Please provide the path to the folder which contains the .txt files that you wish to search in:\n'
         # input_file_path = pyip.inputStr(prompt=prompt)
-        input_file_path = r'C:\Users\parth.patel\PycharmProjects\Automate The Boring Stuff With Python\test'
+        input_file_path = r'C:'
         path = Path(input_file_path)
         if path.is_dir():
             break
