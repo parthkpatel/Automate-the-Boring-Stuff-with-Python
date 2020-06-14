@@ -11,8 +11,8 @@ soup = bs4.BeautifulSoup(res.text, 'html.parser')
 
 # Open a browser tab for each result.
 link_elems = soup.select('.package-snippet')
-numOpen = min(5, len(link_elems))
-for i in range(numOpen):
-    urlToOpen = 'https://pypi.org' + link_elems[i].get('href')
-    print('Opening', urlToOpen)
-    webbrowser.open(urlToOpen)
+num_open = min(5, len(link_elems))
+for i in range(num_open):
+    url_to_open = 'https://pypi.org' + link_elems[i].get('href')
+    print('Opening', url_to_open)
+    webbrowser.open(url_to_open)

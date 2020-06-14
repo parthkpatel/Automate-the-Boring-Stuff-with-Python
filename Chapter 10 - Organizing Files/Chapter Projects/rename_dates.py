@@ -5,7 +5,7 @@
 import shutil, os, re
 
 # Create a regex that matches files with the American date format.
-datePattern = re.compile(r"""^(.*?) # all text before the date
+date_pattern = re.compile(r"""^(.*?) # all text before the date
        ((0|1)?\d)-                     # one or two digits for the month
        ((0|1|2|3)?\d)-                 # one or two digits for the day
        ((19|20)\d\d)                   # four digits for the year
@@ -13,28 +13,28 @@ datePattern = re.compile(r"""^(.*?) # all text before the date
        """, re.VERBOSE)
 
 # Loop over the files in the working directory.
-for amerFilename in os.listdir('.'):
-    mo = datePattern.search(amerFilename)
+for amer_filename in os.listdir('.'):
+    mo = date_pattern.search(amer_filename)
 
     # Skip files without a date.
     if mo is None:
         continue
 
     # Get the different parts of the filename.
-    beforePart = mo.group(1)
-    monthPart = mo.group(2)
-    dayPart = mo.group(4)
-    yearPart = mo.group(6)
-    afterPart = mo.group(8)
+    before_part = mo.group(1)
+    month_part = mo.group(2)
+    day_part = mo.group(4)
+    year_part = mo.group(6)
+    after_part = mo.group(8)
 
     # Form the European-style filename.
-    euroFilename = beforePart + dayPart + '-' + monthPart + '-' + yearPart + afterPart
+    euro_filename = before_part + day_part + '-' + month_part + '-' + year_part + after_part
 
     # Get the full, absolute file paths.
-    absWorkingDir = os.path.abspath('.')
-    amerFilename = os.path.join(absWorkingDir, amerFilename)
-    euroFilename = os.path.join(absWorkingDir, euroFilename)
+    abs_working_dir = os.path.abspath('.')
+    amer_filename = os.path.join(abs_working_dir, amer_filename)
+    euro_filename = os.path.join(abs_working_dir, euro_filename)
 
     # Rename the files.
-    print(f'Renaming "{amerFilename}" to "{euroFilename}"...')
-    # shutil.move(amerFilename, euroFilename)   # uncomment after testing
+    print(f'Renaming "{amer_filename}" to "{euro_filename}"...')
+    shutil.move(amer_filename, euro_filename)   # uncomment after testing

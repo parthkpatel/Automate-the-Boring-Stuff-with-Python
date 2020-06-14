@@ -25,10 +25,10 @@ email_regex = re.compile(r'''(
 text = str(pyperclip.paste())
 matches = []
 for groups in phone_regex.findall(text):
-    phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+    phone_num = '-'.join([groups[1], groups[3], groups[5]])
     if groups[8] != '':
-        phoneNum += ' x' + groups[8]
-    matches.append(phoneNum)
+        phone_num += ' x' + groups[8]
+    matches.append(phone_num)
 for groups in email_regex.findall(text):
     matches.append(groups[0])
 

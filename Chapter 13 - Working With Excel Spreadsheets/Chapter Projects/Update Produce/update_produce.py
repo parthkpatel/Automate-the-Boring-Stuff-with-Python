@@ -12,9 +12,9 @@ PRICE_UPDATES = {'Garlic': 3.07,
 
 
 # Loop through the rows and update the prices.
-for rowNum in range(2, sheet.max_row):    # skip the first row
-    produceName = sheet.cell(row=rowNum, column=1).value
-    if produceName in PRICE_UPDATES:
-        sheet.cell(row=rowNum, column=2).value = PRICE_UPDATES[produceName]
+for row_num in range(2, sheet.max_row):    # skip the first row
+    produce_name = sheet.cell(row=row_num, column=1).value
+    if produce_name in PRICE_UPDATES:
+        sheet.cell(row=row_num, column=2).value = PRICE_UPDATES[produce_name]
 
 wb.save('updatedProduceSales.xlsx')
